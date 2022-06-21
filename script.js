@@ -22,13 +22,11 @@ function generateLetters() {
         letter.classList.add(`${numbers[i]}`);
         const blank = document.createElement('div');
         const dash = document.createElement('img');
-        dash.style.width = `${70 / (1 - (1 / word.length))}px`;
         dash.src = './images/blank_letter.png';
         letter.appendChild(blank);
         letter.appendChild(dash);
         wordArea.appendChild(letter);
     }
-    wordArea.style.gap = `${20 * (1 / word.length)}px`
 }
 
 let input = document.querySelector('input');
