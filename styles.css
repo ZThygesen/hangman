@@ -23,6 +23,7 @@ body {
 }
 
 .container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,10 +105,10 @@ body {
 }
 
 .incorrect-letters {
-    width: 400px;
+    width: calc(var(--scale) * 400px);
     display: grid;
-    grid-template-columns: repeat(3, 133.33px);
-    grid-template-rows: repeat(2, 58px);
+    grid-template-columns: repeat(3, calc(var(--scale) * 133.33px));
+    grid-template-rows: repeat(2, calc(var(--scale) * 58px));
     color: #fff;
     font-size: calc(var(--scale) * 50px);
     text-align: center;
@@ -196,17 +197,35 @@ body {
 
 @media screen and (max-height: 800px) {
     :root {
-        --scale: .65;
+        --scale: .75;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    :root {
+        --scale: .7;
     }
 }
 
 @media screen and (max-height: 700px) {
+    :root {
+        --scale: .65;
+    }
+}
+
+@media screen and (max-height: 650px) {
     :root {
         --scale: .55;
     }
 }
 
 @media screen and (max-height: 600px) {
+    :root {
+        --scale: .5;
+    }
+}
+
+@media screen and (max-height: 550px) {
     :root {
         --scale: .45;
     }
