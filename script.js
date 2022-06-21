@@ -16,7 +16,7 @@ function playGame() {
 
 const numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 function generateLetters() {
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < word.length; i++) {
         const letter = document.createElement('div');
         letter.classList.add('letter');
         letter.classList.add(`${numbers[i]}`);
