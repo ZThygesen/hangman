@@ -5,14 +5,16 @@ let word;
 let gameOver = false;
 let correctGuesses = 0;
 let timesWrong = 0;
+let numWins = 0;
+let numLosses = 0;
 let usedLetters = [];
 let validLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 const hangStages = ['./images/phase_0.png', './images/phase_1.png', './images/phase_2.png', './images/phase_3.png', './images/phase_4.png', './images/phase_5.png', './images/phase_6.png'];
 
 // the different update messages that can be displayed
-const goodUpdates = ['Correct!', 'Nice!', 'Looking good...', 'Not bad!', 'Maybe you\'re a hero?', 'Yep that\'s in there...'];
-const badUpdates = ['Wrong!', 'Are you trying to lose?', 'Nice try...', 'Nope!', 'Poor guy...', 'Incorrect!', 'Maybe the next one?'];
+const goodUpdates = ['Correct!', 'Nice!', 'Looking good...', 'Not bad!', 'Maybe you\'re a hero?', 'Yep that\'s in there...', 'Hang in there...', 'Keep it coming...', 'Maybe there\'s a chance...', 'Certified genius!', 'Someone knows their alphabet!', 'Are you cheating?', 'So you\'re saying there\'s a chance?', 'Mmhmm...', 'You\'re on the right track!'];
+const badUpdates = ['Wrong!', 'Are you trying to lose?', 'Nice try...', 'Nope!', 'Poor guy...', 'Incorrect!', 'Maybe the next one?', 'Oops!', 'Is this a joke to you?', 'C\'mon man!', 'I don\'t like where this is going...', 'Maybe don\'t buy a lottery ticket today?', 'Do we need to go back to kindergarten?'];
 
 // html elements
 
@@ -28,6 +30,10 @@ const incorrectArea = document.querySelector('.incorrect-letters'); // holds inc
 // word/input area
 const wordArea = document.querySelector('.current-word'); // holds letters to the current word
 let input = document.querySelector('input'); // the input area
+
+// win tracker
+let wins = document.querySelector('#wins');
+let losses = document.querySelector('#losses');
 
 
 // keeps page from refreshing after entering input
@@ -152,11 +158,15 @@ function updateBoard() {
 function playerWin() {
     updateMessage.textContent = 'Way to go! You win!';
     updateMessage.style.color = '#00ff00';
+    numWins++;
+    wins.textContent = `${numWins}`;
 }
 
 function playerLose() {
     updateMessage.textContent = `Booo, you lost! The correct word was "${word}".`;
     updateMessage.style.color = '#ff0000';
+    numLosses++;
+    losses.textContent = `${numLosses}`;
 }
 
 // resets everything necessary to start and play a new game

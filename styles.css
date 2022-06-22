@@ -166,6 +166,30 @@ body {
     padding: 10px 10px;
 }
 
+.lower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.win-wrapper, .loss-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.win-wrapper p, .loss-wrapper p {
+    margin: 0;
+    color: #fff;
+    font-size: calc(var(--scale) * 25px);
+}
+
+#wins, #losses {
+    font-size: calc(var(--scale) * 40px);
+}
+
 .form input {
     appearance: none;
     background: none;
