@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HANGMAN</h1>
+        </div>
+        <div class="play-area">
+            <div class="game-update">
+                <p>GUESS A LETTER!</p>
+            </div>
+            <div class="game-progress">
+                <div class="hang-stand">
+                    <img src="./images/phase_0.png" alt="Initial Stage">
+                </div>
+                <div class="incorrect-area">
+                    <p>INCORRECT GUESSES</p>
+                    <img src="./images/blank_letter.png" alt="Chalk Underline">
+                    <div class="incorrect-letters"></div>
+                </div>
+            </div>
+        </div>
+        <div class="word-input">
+            <div class="current-word"></div>
+            <div class="lower">
+                <div class="win-wrapper">
+                    <p>WINS</p>
+                    <p id="wins">0</p>
+                </div>
+                <form class="form">
+                    <div class="input-wrapper">
+                        <input type="text" minlength="1" maxlength="1" size="1" pattern="[A-Za-z]" title="A single alphabetical character." onsubmit="handleSubmit()">
+                    </div>
+                    <p>GUESS</p>
+                </form>
+                <div class="loss-wrapper">
+                    <p>LOSSES</p>
+                    <p id="losses">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
